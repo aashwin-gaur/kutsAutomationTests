@@ -5,7 +5,6 @@
 	<artifactId>NopCommerceFunctionalFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-3213124124124124
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>

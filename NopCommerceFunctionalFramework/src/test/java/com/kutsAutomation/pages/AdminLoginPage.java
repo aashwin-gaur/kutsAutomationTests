@@ -51,6 +51,7 @@ public class AdminLoginPage {
 		}
 		this.email.clear();
 		this.email.sendKeys(email);
+		
 		pass.clear();
 		pass.sendKeys(password);
 		loginbutton.click();

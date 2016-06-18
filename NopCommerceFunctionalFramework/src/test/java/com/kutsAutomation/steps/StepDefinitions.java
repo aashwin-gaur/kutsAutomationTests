@@ -19,7 +19,6 @@ public class StepDefinitions {
 	}
 
 
-
 	@When("^I login with my credentials$")
 	public void i_login_with_my_credentials(DataTable arg1) throws Throwable {
 		String email = arg1.cells(0).get(0).toString();

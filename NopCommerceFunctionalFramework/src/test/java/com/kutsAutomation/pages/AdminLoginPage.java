@@ -50,6 +50,7 @@ public class AdminLoginPage extends BasePage{
 		}
 		this.email.clear();
 		this.email.sendKeys(email);
+		
 		pass.clear();
 		pass.sendKeys(password);
 		loginbutton.click();

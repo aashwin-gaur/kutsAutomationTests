@@ -22,15 +22,16 @@ public class StepDefinitions {
 
 	@When("^I login with my credentials$")
 	public void i_login_with_my_credentials(DataTable arg1) throws Throwable {
-		String email = arg1.cells(0).get(0).toString();
-		String password = arg1.cells(0).get(1).toString();
+		String email = arg1.cells(0).get(1).get(0);
+		String password = arg1.cells(0).get(1).get(1);
 	    Pages.getAdminLoginPage().login(email, password);
+		//System.out.println(email + "    " + password);
 	}
 	
 	
 	@Then("^I should be taken to the \"([^\"]*)\" Page$")
 	public void i_should_be_taken_to_the_Page(String arg1) throws Throwable {
-	    assertTrue(Pages.dashboardPage.isAt());
+	    assertTrue(Pages.getDashboardPage().isAt());
 	}
 
 

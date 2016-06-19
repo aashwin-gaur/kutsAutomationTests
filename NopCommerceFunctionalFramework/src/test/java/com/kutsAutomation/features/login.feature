@@ -1,29 +1,31 @@
-Feature: Home 
-	As a site visitor
-	I want to navigate to the homepage
-	So that i can view general information of the site
+Feature: As a site Admin 
+ I can login to Content Management System
+So that i can edit my site
 
 
-
-@homeURL	
-Scenario: Homepage from URL
-Given I navigate to the URL "http://shopify.com/"
-Then The page with title "Ecommerce Software, Online Store Builder, POS - Free 14-day Trial by Shopify" is displayed
-
-
-@LoginScreen
-Scenario: Is At Login Screen
-Given I navigate to the URL "http://shopify.com/"
-When I click on the "Log in" link
-Then The page with title "Login" is displayed
-
-
-@Login
-Scenario: Login_fail_pass
-Given I navigate to the URL "http://shopify.com/"
-When I click on the "Log in" link
-Then The page with title "Login" is displayed
-When I login with a set of credentials
-	|Username      |Password   |
-	|abc@123.com.au|blahblah123|	
-Then Appropriate outcome is achieved
+@Login @Critical @admin @LoginSuccess 
+Scenario: LoginSuccess 
+ Given I am on the "AdminHome" Page 
+ When I login with my credentials 
+  |username           |password|
+  |admin@yourstore.com|admin   |
+ Then I should be taken to the "Dashboard" Page
+ 
+@Login @Critical @admin @LoginFailure 
+Scenario: LoginFailure 
+ Given I am on the "AdminHome" Page 
+ When I login with my credentials 
+  |wrongusername|wrongpassword|
+ Then I should be given an error 
+ 
+ 
+@Login  
+Scenario: RememeberMe 
+ Given I am on the "AdminHome" Page 
+ When I login with my credentials 
+  |correctusername|correctpassword|     
+ And I click on RememberMe 
+ Then I close the browser 
+ When I Reopen the browser 
+ Given I am on the "AdminHome" Page 
+ Then The "correctusername" should be the value of the email textbox

@@ -11,9 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.*;
 
-public class AdminLoginPage {
+public class AdminLoginPage extends BasePage{
 
-	private WebDriver driver = new FirefoxDriver();
 	private String url = "http://admin-demo.nopcommerce.com/login?ReturnUrl=%2fadmin%2f";
 	
 	@FindBy(how = How.ID, using = "Email")

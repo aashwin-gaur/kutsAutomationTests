@@ -4,15 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashboardPage {
+public class DashboardPage extends BasePage {
 
 	
-	private WebDriver driver = new FirefoxDriver();
 	private String url = "http://admin-demo.nopcommerce.com/login?ReturnUrl=%2fadmin%2f";
-	
-	
-	
-	
 	
 	
 	public DashboardPage(){

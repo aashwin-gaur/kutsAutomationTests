@@ -6,7 +6,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/com/kutsAutomation/features"
-				,glue = "src/test/java/com/kutsAutomation/steps"
+				,glue = "src.test.java.com.kutsAutomation.steps"
 				, tags = {"@LoginSuccess"})
 public class Runner1 {
 	

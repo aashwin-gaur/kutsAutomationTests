@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.*;
 
 public class AdminLoginPage extends BasePage{
 

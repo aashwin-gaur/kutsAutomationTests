@@ -1,14 +1,13 @@
 package com.kutsAutomation.testRunners;
-import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/com/kutsAutomation/features"
-				,glue = "src.test.java.com.kutsAutomation.steps"
-				, tags = {"@LoginSuccess"})
-public class Runner1 {
+				,glue = "com.kutsAutomation.steps"
+				, tags = {"@LoginSuccess"}
+				, format= {"pretty"})
+public class Runner1 extends AbstractTestNGCucumberTests{
 	
 	
 }

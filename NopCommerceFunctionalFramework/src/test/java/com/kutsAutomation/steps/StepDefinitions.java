@@ -3,7 +3,7 @@ package com.kutsAutomation.steps;
 
 import com.kutsAutomation.pages.Pages;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.*;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;

@@ -1,17 +1,30 @@
 package com.kutsAutomation.steps;
 
 
+import com.kutsAutomation.pages.BasePage;
 import com.kutsAutomation.pages.Pages;
 
 import static org.testng.Assert.*;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class AdminLoginSteps extends BaseSteps{
+public class AdminLoginSteps extends BasePage{
+	
+	@Before
+	public void before(){
+		initialisedriver();
+	}
+	
+	@After
+	public void after(){
+		closeDriver();
+	}
 	
 	@Given("^I am on the \"([^\"]*)\" Page$")
 	public void i_am_on_the_Page(String arg1) throws Throwable {

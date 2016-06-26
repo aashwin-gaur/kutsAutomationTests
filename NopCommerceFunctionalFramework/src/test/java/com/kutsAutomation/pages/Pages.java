@@ -4,7 +4,7 @@ public class Pages {
 
 	
 	private static AdminLoginPage adminLoginPage = new AdminLoginPage();
-	private static DashboardPage dashboardPage;
+	private static DashboardPage dashboardPage = new DashboardPage();
 	
 	public static AdminLoginPage getAdminLoginPage(){
 		return adminLoginPage;

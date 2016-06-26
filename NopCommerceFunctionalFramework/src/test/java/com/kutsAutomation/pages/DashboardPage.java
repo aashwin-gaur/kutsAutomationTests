@@ -21,7 +21,7 @@ public class DashboardPage extends BasePage {
 	}
 	
 	public boolean isAt(){
-		if(driver.getCurrentUrl().equals(url)){
+		if(driver.getCurrentUrl().toLowerCase().equals(url.toLowerCase())){
 			return true;
 		}
 		return false;

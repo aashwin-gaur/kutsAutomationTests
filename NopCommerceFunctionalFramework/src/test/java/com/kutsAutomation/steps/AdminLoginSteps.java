@@ -11,7 +11,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class StepDefinitions {
+public class AdminLoginSteps extends BaseSteps{
 	
 	@Given("^I am on the \"([^\"]*)\" Page$")
 	public void i_am_on_the_Page(String arg1) throws Throwable {

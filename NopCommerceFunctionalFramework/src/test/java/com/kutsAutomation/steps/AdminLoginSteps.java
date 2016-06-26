@@ -18,7 +18,7 @@ public class AdminLoginSteps extends BasePage{
 	
 	@Before
 	public void before(){
-		initialisedriver();
+		openChrome();
 	}
 	
 	@After

@@ -1,3 +1,3 @@
 cd ..\..\..\
-call mvn -Dtestsuite=testNGSuite.xml test -X
+call mvn -Dtestsuite=testNGSuite.xml test
 PAUSE

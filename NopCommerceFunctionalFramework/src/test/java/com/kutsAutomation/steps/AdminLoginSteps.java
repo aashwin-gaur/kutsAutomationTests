@@ -62,13 +62,13 @@ public class AdminLoginSteps extends BasePage{
 	@Then("^I close the browser$")
 	public void i_close_the_browser() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		closeDriver();
 	}
 
 	@When("^I Reopen the browser$")
 	public void i_Reopen_the_browser() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    openChrome();
 	}
 
 	@When("^I am on the AdminHomePage$")

@@ -48,7 +48,7 @@
 			<version>6.9.10</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.github.klieber</groupId>
 			<artifactId>phantomjs-maven-core</artifactId>
 			<version>0.7</version>
@@ -57,7 +57,7 @@
 			<groupId>com.github.detro</groupId>
 			<artifactId>phantomjsdriver</artifactId>
 			<version>1.2.0</version>
-		</dependency>
+		</dependency>  -->
 		<dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>

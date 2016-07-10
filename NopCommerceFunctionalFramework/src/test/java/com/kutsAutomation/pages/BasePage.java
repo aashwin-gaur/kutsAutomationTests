@@ -1,17 +1,14 @@
 package com.kutsAutomation.pages;
 
-import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public abstract class BasePage {
 
-	protected WebDriver driver;	
+	protected static WebDriver driver;	
 	
 	private WebDriver initialisedriver(){
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

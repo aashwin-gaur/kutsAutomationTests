@@ -19,7 +19,7 @@ Scenario: LoginFailure
  Then I should be given an error 
  
  
-@Login  
+@Login
 Scenario: RememeberMe 
  Given I am on the "AdminHome" Page 
  When I login with my credentials 
@@ -28,4 +28,4 @@ Scenario: RememeberMe
  Then I close the browser 
  When I Reopen the browser 
  Given I am on the "AdminHome" Page 
- Then The "correctusername" should be the value of the email textbox
+ Then The "admin@yourstore.com" should be the value of the email textbox

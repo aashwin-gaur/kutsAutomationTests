@@ -7,10 +7,10 @@
 #Then: To observe outcomes or validation
 #Background: List of steps run before each of the scenarios
 @tag
-Feature: Add Product
+Feature: Product Maintenance
   As an admin
-  I want to be able to add a product
-  So that I can view it in the list of available products
+  I want to be able to add update delete or search a product
+  So that I can track valid and invalid entries of products
 
   Background: Login
     Given I am on the "AdminHome" Page

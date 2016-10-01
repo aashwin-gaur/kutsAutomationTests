@@ -6,6 +6,8 @@ import com.kutsAutomation.pages.Pages;
 
 import static org.testng.Assert.*;
 
+import org.hamcrest.generator.QDoxFactoryReader;
+
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
@@ -28,7 +30,7 @@ public class AdminLoginSteps extends BasePage{
 	
 	@Given("^I am on the \"([^\"]*)\" Page$")
 	public void i_am_on_the_Page(String arg1) throws Throwable {
-	    Pages.getAdminLoginPage().gotoPage();
+		Pages.getAdminLoginPage().gotoPage();
 	}
 
 
@@ -74,12 +76,39 @@ public class AdminLoginSteps extends BasePage{
 	@When("^I am on the AdminHomePage$")
 	public void i_am_on_the_AdminHomePage() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+
 	}
 
 	@Then("^The \"([^\"]*)\" should be the value of the email textbox$")
 	public void the_should_be_the_value_of_the_email_textbox(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+
+	}
+	
+	
+	@Given("^I click on \"([^\"]*)\"$")
+	public void i_click_on(String arg1) throws Throwable {
+		if(arg1.equals("Catalog")){
+			Pages.getDashboardPage().clickOnCatalog();
+		}
+		if(arg1.equals("Products")){
+			Pages.getDashboardPage().clickOnProducts();
+		}
+		if(arg1.equals("Add New")){
+			Pages.getProductsPage().clickOnAddnewButton();
+		}
+	}
+
+	@When("^I add Product Details$")
+	public void add_Product_Details(DataTable arg1) throws Throwable {
+		String prodName = arg1.cells(0).get(1).get(0);
+		String prodDesc = arg1.cells(0).get(1).get(1);
+		String price = arg1.cells(0).get(1).get(2).toString();
+	    Pages.getAddProductsPage().addProduct(prodName, prodDesc, price);
+	}
+
+	@Then("^The product is in the list of Product$")
+	public void the_product_is_in_the_list_of_Product() throws Throwable {
+		assertTrue(Pages.getProductsPage().addProductSuccess());
 	}
 }

@@ -1,12 +1,12 @@
 package com.kutsAutomation.steps;
 
 
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertNull;
+import java.util.List;
+
 import com.kutsAutomation.pages.BasePage;
 import com.kutsAutomation.pages.Pages;
-
-import static org.testng.Assert.*;
-
-import org.hamcrest.generator.QDoxFactoryReader;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
@@ -111,4 +111,40 @@ public class AdminLoginSteps extends BasePage{
 	public void the_product_is_in_the_list_of_Product() throws Throwable {
 		assertTrue(Pages.getProductsPage().addProductSuccess());
 	}
+	@When("^I select a product$")
+	public void i_select_a_product(DataTable arg1) throws Throwable {
+		List<List<String>> data = arg1.raw();
+	    String productName = data.get(0).get(1);
+	    Pages.getProductsPage().selectProduct(productName);
+	}
+
+	@When("^I click on Delete\\(Selected\\)$")
+	public void i_click_on_Delete_Selected() throws Throwable {
+	    Pages.getProductsPage().clickDeleteSelectedButton();
+	}
+
+	@Then("^the product is no longer in the list$")
+	public void the_product_is_no_longer_in_the_list() throws Throwable {
+	    assertNull(Pages.getProductsPage().searchPreviousProduct());
+	}
+
+	@When("^I search a product:$")
+	public void i_search_a_product(DataTable arg1) throws Throwable {
+	    List<List<String>> data = arg1.raw();
+	    String productname = data.get(0).get(1);
+	}
+
+	@When("^I Select all Products Found$")
+	public void i_Select_all_Products_Found() throws Throwable {
+	   
+	}
+
+	@Then("^the products are no longer in the list$")
+	public void the_products_are_no_longer_in_the_list() throws Throwable {
+	    
+	}
+
+	
+	
+	
 }

@@ -5,7 +5,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(features = "src/test/java/com/kutsAutomation/features"
 				,glue = "com.kutsAutomation.steps"
-				, tags = {"@LoginSuccess"}
+				, tags = {"@Single"}
 				, format= {"pretty"})
 public class Runner1 extends AbstractTestNGCucumberTests{
 	

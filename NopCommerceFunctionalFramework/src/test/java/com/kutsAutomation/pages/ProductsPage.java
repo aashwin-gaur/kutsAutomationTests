@@ -20,7 +20,7 @@ public class ProductsPage extends BasePage {
 	@FindBy(how=How.XPATH,using="//html/body/div[3]/div[3]/div[1]")
 	private WebElement addSuccessfulMesage;
 	
-	@FindBy(how=How.XPATH, using="/html/body/div[3]/div[3]/div/form[1]/div[2]/div/div/div[2]/div/div/table")
+	@FindBy(how=How.XPATH, using="//*[@id=\"products-grid\"]/table/tbody")
 	private WebElement productTable;
 	
 	private String lastSearchedProduct;
@@ -61,8 +61,12 @@ public class ProductsPage extends BasePage {
 	public WebElement searchProduct(String productName){
 		lastSearchedProduct = productName;
 		List<WebElement> allrows = productTable.findElements(By.tagName("tr"));
+		System.out.println(allrows.size());
 		for(WebElement tr : allrows){
-			for(WebElement td: tr.findElements(By.tagName("td"))){
+			for(WebElement td: tr.findElements(By.xpath("/td[3]"))){
+				
+				System.out.println("Name of product : "+td.getText());
+
 				if(td.getText().equals(productName)){
 					return tr;
 				}

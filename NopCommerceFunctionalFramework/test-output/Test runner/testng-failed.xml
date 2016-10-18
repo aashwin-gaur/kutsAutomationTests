@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Test runner]" parallel="tests">
+  <test name="AdminLogin">
+    <packages>
+      <package name="com.kutsAutomation.testRunners.*"/>
+    </packages>
+    <classes>
+      <class name="com.kutsAutomation.testRunners.Runner1"/>
+    </classes>
+  </test> <!-- AdminLogin -->
+  <test name="AdminLogin(failed)" parallel="tests">
+    <classes>
+      <class name="com.kutsAutomation.testRunners.Runner1">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.kutsAutomation.testRunners.Runner1 -->
+    </classes>
+  </test> <!-- AdminLogin(failed) -->
+</suite> <!-- Failed suite [Test runner] -->

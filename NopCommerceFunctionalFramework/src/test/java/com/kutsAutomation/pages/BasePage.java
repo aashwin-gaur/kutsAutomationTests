@@ -12,7 +12,6 @@ public abstract class BasePage {
 	
 	private WebDriver initialisedriver(){
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	

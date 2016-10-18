@@ -24,14 +24,14 @@ Feature: Product Maintenance
   @Product @RemoveProduct @Single
   Scenario: Remove Product Selected
     When I select a product
-      | ProductName | "$25 Virtual Gift Card" |
+      | ProductName | $50 Physical Gift Card |
     And I click on Delete(Selected)
     Then the product is no longer in the list
 
   @Product @RemoveProduct @Many
   Scenario: Remove all Product Searched
     When I search a product:
-      | ProductName | "apple" |
+      | ProductName | apple |
     And I Select all Products Found
     And I click on Delete(Selected)
     Then the products are no longer in the list
